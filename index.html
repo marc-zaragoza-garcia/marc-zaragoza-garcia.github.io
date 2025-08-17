@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--w3.org para información-->
+<!--mozilla <table> para información sobre cosas (tablas en este caso)-->
+<!--validator.w3.org para validar el código-->
+<html lang="es">
+    <!--El head no se ve en pantalla, es para dar datos a la página-->
+    <head>
+        <!--Añadimos charset="utf-8" para poder ver tildes y caracteres de nuestra región-->
+        <meta charset="utf-8">
+        <!--Añadimos un título-->
+        <title>Portfolio de Marc Zaragoza</title>
+
+        <!--Librerias externas para fuentes de letras/texto-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <!--Indicamos que debe seguir los estilos que escribimos en otro archivo css-->
+        <link rel="stylesheet" href="./CSS/estilos.css">
+
+        <!--Enlace de Font Awesome: iconos útiles de redes sociales-->
+        <script src="https://kit.fontawesome.com/818cf65a91.js" crossorigin="anonymous"></script>
+
+        <!--Codepen.io para encontrar código ya hecho-->
+
+        <!-- otra forma de cambiar color
+        <style>
+            body{
+                background-color: #888;
+            }
+        </style>
+        -->
+
+    </head>
+    <!--El body si que se ve en pantalla, separamos en títulos, parrafos. Importante no dar forma con html: se hace con css-->
+    <body> <!--css in line colocar style="background-color: #222;" dentro de body-->
+
+        <!--Menú de navegación-->
+        <nav>
+            <ul>
+                <!--con #sobremi nos dirigimos a la etiqueta dentro del codigo en el menu-->
+                <li><a href="#sobremi">SOBRE MI</a></li>
+                <li><a href="#portfolio">PORTFOLIO</a></li>
+                <li id="logo"><img src="https://i.postimg.cc/k4qLKvtV/NAVEGADOR.png" alt="Antenas menu de inicio" height="34px"></li>
+                <li><a href="#experiencia">EXPERIENCIA</a></li>
+                <li><a href="#contactar">CONTACTAR</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <!--Bloque de INICIO-->
+            <section id="inicio">
+                <h2>MARC ZARAGOZA</h2>
+                
+                <!--class="nombre" para aplicar colores o propiedades por separado al grupo
+                luego en el css ponemos .nombre{} para añadir los datos-->
+                <!--id="nombre" para aplicar colores o propiedades a un solo elemento
+                luego en el css ponemos #nombre{} para añadir los datos-->
+                <!--para aplicar colores o propiedades a todo un tipo de elemento ponemos 
+                tipo_elemento{} para añadir los datos ej: h3{}-->
+                <h3 class="hastag">#programador</h3>
+                <h3 class="hastag">#teleco</h3>
+
+                <ul id="redessociales">
+                    <li><a href="https://www.instagram.com/maarcz._/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://es.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="https://x.com/_maarcz" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li><a href="https://wa.me/693918881" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+                </ul>
+
+            </section>
+            <!--Fin bloque de INICIO-->
+
+            <!--Bloque de SOBRE MI-->
+            <section id="sobremi">
+                <!--mejor reescalar la imagen en GIMP para no sobrecargar la página-->
+                <!--height="250" o width para cambiar altura o anchura. Si se usa una sola se reescala, si se usan las dos se deforma la imagen-->
+                <div id="imagen_sobremi"><img src="https://i.postimg.cc/VNyxL8fW/man-5307645-250.png" alt="Foto Marc Zaragoza" width="250"></div>
+                <div>
+                    <h2>SOBRE MI</h2>
+                    <p>Soy <strong>Marc Zaragoza</strong>, estudiante de <span>Ingenieria en Sistemas y Servicios de Telecomunicaciones</span>. Estudio en la <cite>Universitat Politècnica de València</cite> y voy a pasar a estudiar la mención en Electrónica en el tercer curso </p>
+                    <p>Me defino como una persona <span>creativa</span>, <span>resolutiva</span> y <span>enamorado</span> de lo que hago</p>
+                    <div class="masinfo"><button >MAS INFO</button></div>
+                </div>
+            </section>
+            <!--Fin bloque de SOBRE MI-->
+
+            <!--Bloque de PORTFOLIO-->
+            <section id="portfolio">
+                <h2>PORTFOLIO</h2>
+                <h3>Mas alá del texto</h3>
+
+                <div class="filaportfolio">
+                    <div class="card">
+                        <img src="https://i.postimg.cc/dVTMY1Y0/imagen-portfolio-escalada.jpg" alt="Imagen Portfolio 1" width="250">
+                        <h3>TÍTULOS</h3>
+                        <h4>Lorem, ipsum dolor sit amet</h4>
+                        <div class="sep"></div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio doloribus eligendi cumque voluptatum</p>
+                        <div class="masinfo"><button type="button">MAS INFO</button></div>
+                    </div>
+                    <div class="card">
+                        <iframe width="250" src="https://www.youtube.com/embed/l5tFb2bftZI?si=bQyHA22UoRFUa4QT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <h3>PROYECTOS</h3>
+                        <h4>Lorem, ipsum dolor sit amet</h4>
+                        <div class="sep"></div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio doloribus eligendi cumque voluptatum</p>
+                        <div class="masinfo"><button type="button">MAS INFO</button></div>
+                    </div>
+                    <div class="card">
+                        <img src="https://i.postimg.cc/dVTMY1Y0/imagen-portfolio-escalada.jpg" alt="Imagen Portfolio 3" width="250">
+                        <h3>WEB</h3>
+                        <h4>Lorem, ipsum dolor sit amet</h4>
+                        <div class="sep"></div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio doloribus eligendi cumque voluptatum</p>
+                        <div class="masinfo"><button type="button">MAS INFO</button></div>
+                    </div>
+                    <div class="card">
+                        <iframe width="250" src="https://www.youtube.com/embed/l5tFb2bftZI?si=bQyHA22UoRFUa4QT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <h3>SEÑALES</h3>
+                        <h4>Lorem, ipsum dolor sit amet</h4>
+                        <div class="sep"></div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio doloribus eligendi cumque voluptatum</p>
+                        <div class="masinfo"><button type="button">MAS INFO</button></div>
+                    </div>
+                </div>
+                <!--
+                <table>
+                    <thead>
+                        <tr>
+                            ##colspan y rowspan para juntar varias filas o columnas
+                            <th colspan="4">Ejemplos de portfolio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>títulos</td>
+                            <td>proyectos</td>
+                            <td>web</td>
+                            <td>señales</td>
+                        </tr>
+                        <tr>
+                            <td>skills</td>
+                            <td>electrónica</td>
+                            <td>física</td>
+                            <td>matemáticas</td>
+                        </tr>
+                    </tbody>
+                </table>
+                -->
+            </section>
+            <!--Fin bloque de PORTFOLIO-->
+            <section id="experiencia">
+                <h2>EXPERIENCIA & <span>SKILLS</span></h2>
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+
+                <div class="gridexp">
+                    <div class="cardexp">
+                        <h2>DISEÑO WEB</h2>
+                        <h3>2025</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <ul>
+                            <li><i class="fa-brands fa-html5"></i></li>
+                            <li><i class="fa-brands fa-css"></i></li>
+                            <li><i class="fa-brands fa-java"></i></li>
+                        </ul>
+                    </div>
+                    <div class="cardexp">
+                        <h2>DISEÑO WEB</h2>
+                        <h3>2025</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <ul>
+                            <li><i class="fa-brands fa-html5"></i></li>
+                            <li><i class="fa-brands fa-css"></i></li>
+                            <li><i class="fa-brands fa-java"></i></li>
+                        </ul>
+                    </div>
+                    <div class="cardexp">
+                        <h2>DISEÑO WEB</h2>
+                        <h3>2025</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <ul>
+                            <li><i class="fa-brands fa-html5"></i></li>
+                            <li><i class="fa-brands fa-css"></i></li>
+                            <li><i class="fa-brands fa-java"></i></li>
+                        </ul>
+                    </div>
+                    <div class="cardexp">
+                        <h2>DISEÑO WEB</h2>
+                        <h3>2025</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <ul>
+                            <li><i class="fa-brands fa-html5"></i></li>
+                            <li><i class="fa-brands fa-css"></i></li>
+                            <li><i class="fa-brands fa-java"></i></li>
+                        </ul>
+                    </div>
+                    <div class="cardexp">
+                        <h2>DISEÑO WEB</h2>
+                        <h3>2025</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <ul>
+                            <li><i class="fa-brands fa-html5"></i></li>
+                            <li><i class="fa-brands fa-css"></i></li>
+                            <li><i class="fa-brands fa-java"></i></li>
+                        </ul>
+                    </div>
+                    <div class="cardexp">
+                        <h2>DISEÑO WEB</h2>
+                        <h3>2025</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <ul>
+                            <li><i class="fa-brands fa-html5"></i></li>
+                            <li><i class="fa-brands fa-css"></i></li>
+                            <li><i class="fa-brands fa-java"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!--Fin bloque de PORTFOLIO-->
+            <section id="contactar">
+                <h2>CONTACTO</h2>
+                <h3>Envíame tus dudas</h3>
+
+                 <form action="#">
+                    <div class="itemform">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" minlength="2" maxlength="64" size="32" required>
+                    </div>
+                    <div class="itemform">
+                        <label for="empresa">Empresa</label>
+                        <input type="text" id="empresa" name="empresa" minlength="2" maxlength="64" size="32">
+                    </div>
+                    <div class="itemform">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" minlength="2" maxlength="64" size="32" required>
+                    </div>
+                    <div class="itemform">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea name="mensaje" id="mensaje" cols="33" rows="5" required></textarea>   
+                    </div>
+                    <div class="itemform">
+                        <input type="submit" name="boton" value="CONTACTAR">
+                    </div>
+                 </form>
+            </section>
+        </article>
+        <!--Footer-->
+        <footer>
+            <ul>
+                <!--con #sobremi nos dirigimos a la etiqueta dentro del codigo en el menu-->
+                <li id="logo"><img src="https://i.postimg.cc/k4qLKvtV/NAVEGADOR.png" alt="Antenas menu de inicio" height="34px"></li>
+                <li><h2>Marc Zaragoza García</h2></li>
+            </ul>
+        </footer>
+    </body>
+</html>
