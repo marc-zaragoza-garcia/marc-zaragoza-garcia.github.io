@@ -315,14 +315,32 @@ document.addEventListener('DOMContentLoaded', function() {
         if (langToggle) langToggle.textContent = 'ES';
     }
 
-    // Manejar clic en el botón de idioma
-    if (langToggle) {
-        langToggle.addEventListener('click', function() {
-            currentLang = currentLang === 'es' ? 'en' : 'es';
+    // Función para cambiar el idioma
+    const cambiarIdioma = () => {
+        currentLang = currentLang === 'es' ? 'en' : 'es';
+        if (langToggle) {
             langToggle.textContent = currentLang.toUpperCase();
-            localStorage.setItem('lang', currentLang);
-            updateLanguage(currentLang);
+        }
+        localStorage.setItem('lang', currentLang);
+        updateLanguage(currentLang);
+    };
+
+    // Manejar clic y toque en el botón de idioma
+    if (langToggle) {
+        // Para dispositivos táctiles
+        langToggle.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            cambiarIdioma();
+        }, { passive: false });
+        
+        // Para dispositivos con mouse
+        langToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            cambiarIdioma();
         });
+        
+        // Asegurarse de que el texto del botón esté actualizado
+        langToggle.textContent = currentLang.toUpperCase();
     }
 
     // Animación suave al hacer scroll
