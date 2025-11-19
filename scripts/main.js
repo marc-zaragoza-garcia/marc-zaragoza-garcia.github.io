@@ -97,29 +97,37 @@ document.addEventListener('DOMContentLoaded', function() {
         if (footerP) footerP.textContent = t.footer.derechos;
     }
 
+    // Función para actualizar el tema
+    function updateTheme(isLight) {
+        const contactoSection = document.getElementById('contacto');
+        
+        if (isLight) {
+            body.classList.add('light-theme');
+            if (themeToggle) themeToggle.textContent = '☀️';
+            if (contactoSection) contactoSection.style.backgroundColor = '#F1F5F9';
+        } else {
+            body.classList.remove('light-theme');
+            if (themeToggle) themeToggle.textContent = '🌙';
+            if (contactoSection) contactoSection.style.backgroundColor = '#1E293B';
+        }
+    }
+
     // Cargar tema guardado
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
-        body.classList.add('light-theme');
-        if (themeToggle) themeToggle.textContent = '☀️';
+        updateTheme(true);
     } else if (savedTheme === null) {
         // Si no hay tema guardado, establecer el tema oscuro por defecto
         localStorage.setItem('theme', 'dark');
-        if (themeToggle) themeToggle.textContent = '🌙';
+        updateTheme(false);
     }
 
     // Manejar clic en el botón de tema
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-theme');
-            
-            if (body.classList.contains('light-theme')) {
-                themeToggle.textContent = '☀️';
-                localStorage.setItem('theme', 'light');
-            } else {
-                themeToggle.textContent = '🌙';
-                localStorage.setItem('theme', 'dark');
-            }
+            const isLight = !body.classList.contains('light-theme');
+            updateTheme(isLight);
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
         });
     }
 

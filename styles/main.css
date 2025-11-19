@@ -107,6 +107,9 @@ nav {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     width: auto;
+    max-width: calc(100% - 2rem); /* Añadido para limitar el ancho máximo */
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 nav ul {
@@ -235,13 +238,19 @@ nav ul li a:focus:not(:focus-visible) {
     align-items: center;
 }
 
+.presentacion-contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
 .presentacion-info {
-    order: 2;
     text-align: center;
+    width: 100%;
 }
 
 .presentacion-imagen {
-    order: 1;
     width: 80%;
     max-width: 300px;
     margin: 0 auto;
@@ -252,6 +261,33 @@ nav ul li a:focus:not(:focus-visible) {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para pantallas medianas y grandes */
+@media (min-width: 768px) {
+    .presentacion-contenido {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4rem;
+    }
+    
+    .presentacion-info {
+        text-align: left;
+        width: 60%;
+    }
+    
+    .presentacion-imagen {
+        width: 40%;
+        max-width: 350px;
+        margin: 0;
+    }
+    
+    .presentacion-info p {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 .presentacion-imagen img {
@@ -274,7 +310,7 @@ body.light-theme .presentacion-info p {
 }
 
 .presentacion-info h2 {
-    color: #2563EB;
+    color: #3B82F6;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
 }
@@ -297,6 +333,33 @@ body.light-theme .presentacion-info p {
     
     .presentacion-info h1 {
         font-size: 2.5rem;
+    }
+    
+    .presentacion-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+    
+    .presentacion-contenido {
+        order: 1;
+        text-align: left;
+    }
+    
+    .presentacion-info {
+        text-align: left;
+    }
+    
+    .presentacion-info p {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .presentacion-imagen {
+        order: 2;
+        width: 100%;
+        max-width: 400px;
+        margin: 0;
     }
     
     .presentacion-info h2 {
@@ -407,16 +470,38 @@ body.light-theme .presentacion-info p {
     justify-content: center;
 }
 
-.presentacion-imagen img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+/* Asegurar que la imagen se vea bien en móviles */
+@media (max-width: 767px) {
+    .presentacion-imagen img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+    }
+}
+
+/* Estilos para escritorio */
+@media (min-width: 768px) {
+    .presentacion-imagen img {
+        border-radius: 50%;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+    .presentacion-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .presentacion-info {
+        width: 50%;
+    }
+    .presentacion-imagen {
+        width: 50%;
+    }
 }
 
 /* Estilos para la sección de proyectos */
 #proyectos {
-    padding: 2.5rem 1rem 3rem;
+    padding: 2.5rem 1rem 2rem;
     background-color: var(--color-fondo-claro);
     position: relative;
     overflow: hidden;
@@ -594,7 +679,7 @@ body.light-theme .presentacion-info p {
 /* Ajustes responsivos */
 @media (max-width: 768px) {
     #proyectos {
-        padding: 2rem 1rem;
+        padding: 2rem 1rem 4rem;
     }
     
     .categoria-proyectos {
@@ -777,7 +862,7 @@ body.light-theme .presentacion-info p {
    SECCIÓN DE SKILLS
    ====================== */
 #skills {
-    padding: 5rem 1rem;
+    padding: 2rem 1rem 3rem;
     background-color: var(--color-fondo-claro);
     text-align: center;
 }
@@ -913,7 +998,14 @@ body.light-theme .skill-icon {
 /* Sección de contacto */
 #contacto {
     padding: 4rem 2rem;
-    background-color: var(--color-fondo-principal);
+    background-color: #1E293B;
+}
+
+/* Tema claro - Regla con alta especificidad */
+body.light-theme #contacto,
+html body.light-theme section#contacto,
+body.light-theme section#contacto.contacto {
+    background-color: #F1F5F9 !important;
 }
 
 .contacto-container {
@@ -950,10 +1042,15 @@ body.light-theme .skill-icon {
 
 /* Footer */
 footer {
-    background-color: var(--color-footer-fondo);
+    background-color: #1E293B;
     color: var(--color-footer-texto);
-    padding: 2rem;
+    padding: 2rem 2rem 100px 2rem; /* Aumentado el padding inferior a 100px */
     text-align: center;
+}
+
+body.light-theme footer {
+    background-color: #F1F5F9;
+    color: var(--color-texto-oscuro);
 }
 
 footer a {
@@ -990,35 +1087,57 @@ footer a:hover {
     }
     
     nav {
-        width: 90%;
+        position: fixed;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
         min-width: unset;
-        padding: 0.6rem 1rem;
+        padding: 0.6rem 1.5rem;
+        max-width: calc(100% - 2rem);
+        box-sizing: border-box;
+        margin: 0 auto;
     }
     
     nav ul {
-        flex-direction: row;
-        gap: 0.8rem;
-        flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        padding-bottom: 2px; /* Espacio para el scroll en algunos navegadores */
+    }
+    
+    /* Ocultar scrollbar en Chrome, Safari y Edge */
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+    
+    nav ul li {
+        flex-shrink: 0;
     }
     
     nav ul li a {
-        flex-direction: row;
-        gap: 0.5rem;
+        flex-direction: column;
+        gap: 0.3rem;
+        padding: 0.5rem;
     }
     
-    nav ul li a svg {
-        width: 28px;
-        height: 28px;
+    nav ul li a img {
+        width: 22px;
+        height: 22px;
     }
     
     .nav-buttons {
         flex-direction: row;
+        flex-shrink: 0;
+        margin-left: 0.5rem;
     }
     
     .nav-buttons button {
-        padding: 0.3rem 0.6rem;
+        padding: 0.3rem 0.8rem;
         font-size: 0.8rem;
+        white-space: nowrap;
     }
     
     .cards-container {
@@ -1040,6 +1159,21 @@ footer a:hover {
         font-size: 1.5rem;
     }
     
+    nav {
+        padding: 0.5rem 1rem;
+        max-width: calc(100% - 1rem);
+    }
+    
+    nav ul li a img {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .nav-buttons button {
+        padding: 0.25rem 0.6rem;
+        font-size: 0.75rem;
+    }
+    
     h2 {
         font-size: 1.3rem;
     }
@@ -1059,18 +1193,29 @@ footer a:hover {
 
 /* Tema claro (para implementar con JavaScript) */
 
-body.light-theme #contacto {
-    background-color: var(--color-fondo-claro);
-}
+/* Regla duplicada eliminada */
+
+/* Regla duplicada eliminada */
 
 body.light-theme .skills-container h2 {
     color: var(--color-texto-oscuro);
 }
 
+/* Asegurar que el color se mantenga en #3B82F6 para el tema claro */
+body.light-theme .presentacion-info h2 {
+    color: #3B82F6;
+}
+
 body.light-theme #skills,
 body.light-theme #proyectos,
-body.light-theme #presentacion {
-    background-color: #D1D5DB; /* Perfect mid-point between #1E293B and white */
+body.light-theme #presentacion,
+body.light-theme .container > section {
+    background-color: #F1F5F9;
+}
+
+/* Sección de contacto en tema claro */
+body.light-theme #contacto {
+    background-color: #F1F5F9 !important;
 }
 
 body.light-theme footer {
@@ -1084,6 +1229,35 @@ body.light-theme footer a {
 
 body.light-theme footer a:hover {
     color: var(--color-enlace-hover);
+}
+
+/* Asegurar que el footer tenga el color correcto en modo oscuro */
+:root:not(.light-theme) footer {
+    background-color: #1E293B !important;
+    color: #F8FAFC !important;
+}
+
+/* Regla eliminada para permitir el cambio de tema correcto */
+
+body.light-theme {
+    background-color: #F1F5F9; /* Fondo general más oscuro para mejor contraste */
+    color: #0F172A; /* Texto oscuro sobre fondo claro */
+}
+
+/* Títulos en tema claro */
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme h5,
+body.light-theme h6 {
+    color: #0F172A;
+}
+
+/* Texto de presentación en tema claro */
+body.light-theme .presentacion-info p,
+body.light-theme .presentacion-info h1 {
+    color: #0F172A;
 }
 
 body.light-theme nav {
