@@ -99,16 +99,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Función para actualizar el tema
     function updateTheme(isLight) {
-        const contactoSection = document.getElementById('contacto');
-        
         if (isLight) {
             body.classList.add('light-theme');
             if (themeToggle) themeToggle.textContent = '☀️';
-            if (contactoSection) contactoSection.style.backgroundColor = '#F1F5F9';
         } else {
             body.classList.remove('light-theme');
             if (themeToggle) themeToggle.textContent = '🌙';
-            if (contactoSection) contactoSection.style.backgroundColor = '#1E293B';
         }
     }
 
