@@ -63,9 +63,13 @@ h1 {
     font-size: 3rem;
     font-weight: 700;
 }
+h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
 
 /* Estilo para todos los títulos de sección */
-h2,#proyectos h2, #skills h2, #contacto h2 {
+#proyectos h2, #skills h2, #contacto h2 {
     font-size: 2.5rem !important;
     margin-bottom: 2rem !important;
     font-family: var(--font-principal) !important;
