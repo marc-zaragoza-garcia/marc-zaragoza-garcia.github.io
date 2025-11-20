@@ -1229,8 +1229,12 @@ footer a:hover {
         font-size: 0.75rem;
     }
     
-    h2 {
-        font-size: 1.3rem;
+    /* Asegurar que todos los títulos h2 tengan el mismo tamaño en móviles */
+    h2,
+    #proyectos h2,
+    #skills h2,
+    #contacto h2 {
+        font-size: 1.8rem !important;
     }
     
     .presentacion-info h2 {
