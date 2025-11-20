@@ -1138,8 +1138,8 @@ footer a:hover {
     }
     
     h2 {
-        font-size: 1.8rem !important;
-        font-weight: bold !important;
+        font-size: 1.8rem;
+        font-weight: bold;
     }
     
     nav {
