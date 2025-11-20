@@ -65,7 +65,7 @@ h1 {
 }
 
 /* Estilo para todos los títulos de sección */
-h2, #skills h2, #contacto h2 {
+h2,#proyectos h2, #skills h2, #contacto h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     font-family: var(--font-principal);
@@ -1139,7 +1139,8 @@ footer a:hover {
     }
     
     h2 {
-        font-size: 1.8rem;
+        font-size: 1.8rem !important;
+        font-weight: bold !important;
     }
     
     nav {
