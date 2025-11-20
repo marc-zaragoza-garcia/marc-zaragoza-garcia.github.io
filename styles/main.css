@@ -69,8 +69,7 @@ h2,#proyectos h2, #skills h2, #contacto h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     font-family: var(--font-principal);
-    font-weight: 700; /* Aumentado a 700 para negrita más pronunciada */
-    font-weight: bold; /* Aseguramos que sea negrita */
+    font-weight: 700 !important; /* Aumentado a 700 para negrita más pronunciada */
 }
 
 /* Color del texto para tema oscuro */
