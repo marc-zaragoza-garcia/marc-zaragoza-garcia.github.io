@@ -12,7 +12,7 @@
 </head>
 <body>
     <!-- Navegación flotante en isla -->
-    <nav>
+    <nav aria-label="Navegación principal">
         <ul>
             <li><a href="#presentacion">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -103,7 +103,7 @@
                             Instagram
                         </a>
                     </div>
-                    <a href="cv.pdf" download class="btn-cv">Descargar CV</a>
+                    <a href="mailto:marc.zaragoza.garcia@gmail.com?subject=Solicitud%20de%20CV" class="btn-cv">Solicitar CV</a>
                 </div>
                 <div class="presentacion-imagen">
                     <img src="images/silueta.png" alt="Marc Zaragoza - Ingeniero en Telecomunicaciones">
@@ -168,47 +168,46 @@
                 </div>
             </div>
 
-            <!-- Carrusel de Frontend -->
+            <!-- Carrusel de Electrónica -->
             <div class="categoria-proyectos">
-                <h3 class="categoria-titulo">Frontend</h3>
+                <h3 class="categoria-titulo">Electrónica</h3>
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="images/imagen_card1.jpg" alt="Proyecto de frontend">
+                                <img src="images/imagen_card1.jpg" alt="Proyecto de electrónica" loading="lazy" decoding="async">
                                 <div class="card-content">
-                                    <h4>Proyecto Frontend 1</h4>
-                                    <p>Descripción breve del proyecto de frontend 1.</p>
+                                    <h4>Proyecto de electrónica 1</h4>
+                                    <p>Diseño y montaje de un circuito electrónico.</p>
                                     <div class="card-skills">
-                                        <span class="skill-tag">HTML</span>
-                                        <span class="skill-tag">CSS</span>
-                                        <span class="skill-tag">JavaScript</span>
+                                        <span class="skill-tag">Circuitos</span>
+                                        <span class="skill-tag">Medición</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="images/imagen_card1.jpg" alt="Proyecto de frontend">
+                                <img src="images/imagen_card1.jpg" alt="Proyecto de electrónica" loading="lazy" decoding="async">
                                 <div class="card-content">
-                                    <h4>Proyecto Frontend 2</h4>
-                                    <p>Descripción breve del proyecto de frontend 2.</p>
+                                    <h4>Proyecto de electrónica 2</h4>
+                                    <p>Integración de sensores y control electrónico.</p>
                                     <div class="card-skills">
-                                        <span class="skill-tag">React</span>
-                                        <span class="skill-tag">Tailwind CSS</span>
+                                        <span class="skill-tag">Sensores</span>
+                                        <span class="skill-tag">Control</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="images/imagen_card1.jpg" alt="Proyecto de frontend">
+                                <img src="images/imagen_card1.jpg" alt="Proyecto de electrónica" loading="lazy" decoding="async">
                                 <div class="card-content">
-                                    <h4>Proyecto Frontend 3</h4>
-                                    <p>Descripción breve del proyecto de frontend 3.</p>
+                                    <h4>Proyecto de electrónica 3</h4>
+                                    <p>Desarrollo de un sistema electrónico aplicado.</p>
                                     <div class="card-skills">
-                                        <span class="skill-tag">Vue.js</span>
-                                        <span class="skill-tag">Sass</span>
+                                        <span class="skill-tag">Electrónica</span>
+                                        <span class="skill-tag">Prototipado</span>
                                     </div>
                                 </div>
                             </div>
@@ -227,7 +226,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="images/imagen_card1.jpg" alt="Proyecto de Arduino">
+                                <img src="images/imagen_card1.jpg" alt="Proyecto de Arduino" loading="lazy" decoding="async">
                                 <div class="card-content">
                                     <h4>Proyecto Arduino 1</h4>
                                     <p>Descripción breve del proyecto de Arduino 1.</p>
@@ -240,7 +239,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="images/imagen_card1.jpg" alt="Proyecto de Arduino">
+                                <img src="images/imagen_card1.jpg" alt="Proyecto de Arduino" loading="lazy" decoding="async">
                                 <div class="card-content">
                                     <h4>Proyecto Arduino 2</h4>
                                     <p>Descripción breve del proyecto de Arduino 2.</p>
@@ -253,7 +252,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="images/imagen_card1.jpg" alt="Proyecto de Arduino">
+                                <img src="images/imagen_card1.jpg" alt="Proyecto de Arduino" loading="lazy" decoding="async">
                                 <div class="card-content">
                                     <h4>Proyecto Arduino 3</h4>
                                     <p>Descripción breve del proyecto de Arduino 3.</p>
@@ -310,72 +309,87 @@
                     <div class="skill-icon">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/systemverilog/systemverilog-original.svg" alt="SystemVerilog">
                     </div>
-                    <h3>SystemVerilog</h3>
-                    <p>Diseño digital y verificación de hardware</p>
+                    <h3 data-skill="systemverilog">SystemVerilog</h3>
+                    <p data-skill-description="systemverilog">Diseño digital y verificación de hardware</p>
                 </div>
                 
                 <div class="skill-card">
                     <div class="skill-icon">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
                     </div>
-                    <h3>Python</h3>
-                    <p>Desarrollo de aplicaciones y automatización</p>
+                    <h3 data-skill="python">Python</h3>
+                    <p data-skill-description="python">Desarrollo de aplicaciones y automatización</p>
                 </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino">
-                    </div>
-                    <h3>Arduino</h3>
-                    <p>Electrónica y proyectos IoT</p>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
-                    </div>
-                    <h3>HTML5</h3>
-                    <p>Estructura y semántica web</p>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
-                    </div>
-                    <h3>CSS3</h3>
-                    <p>Diseño y estilos web</p>
-                </div>
-
                 <div class="skill-card">
                     <div class="skill-icon">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
                     </div>
-                    <h3>C</h3>
-                    <p>Programación de sistemas y bajo nivel</p>
+                    <h3 data-skill="c">C</h3>
+                    <p data-skill-description="c">Programación de sistemas y bajo nivel</p>
                 </div>
 
                 <div class="skill-card">
                     <div class="skill-icon">
                         <span aria-hidden="true">ASM</span>
                     </div>
-                    <h3>Lenguaje ensamblador</h3>
-                    <p>Programación y arquitectura de computadores</p>
+                    <h3 data-skill="assembly">Lenguaje ensamblador</h3>
+                    <p data-skill-description="assembly">Programación y arquitectura de computadores</p>
                 </div>
 
                 <div class="skill-card">
                     <div class="skill-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/stm32/stm32-original.svg" alt="STM32">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" loading="lazy" decoding="async">
                     </div>
-                    <h3>STM32</h3>
-                    <p>Desarrollo de sistemas embebidos</p>
+                    <h3 data-skill="java">Java</h3>
+                    <p data-skill-description="java">Programación orientada a objetos</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" loading="lazy" decoding="async">
+                    </div>
+                    <h3 data-skill="html5">HTML5</h3>
+                    <p data-skill-description="html5">Estructura y semántica web</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" loading="lazy" decoding="async">
+                    </div>
+                    <h3 data-skill="css3">CSS3</h3>
+                    <p data-skill-description="css3">Diseño y estilos web</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino" loading="lazy" decoding="async">
+                    </div>
+                    <h3 data-skill="arduino">Arduino</h3>
+                    <p data-skill-description="arduino">Electrónica y proyectos IoT</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/stm32/stm32-original.svg" alt="STM32" loading="lazy" decoding="async">
+                    </div>
+                    <h3 data-skill="stm32">STM32</h3>
+                    <p data-skill-description="stm32">Desarrollo de sistemas embebidos</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android Apps" loading="lazy" decoding="async">
+                    </div>
+                    <h3 data-skill="android">Android Apps</h3>
+                    <p data-skill-description="android">Desarrollo de aplicaciones móviles</p>
                 </div>
 
                 <div class="skill-card">
                     <div class="skill-icon">
                         <span aria-hidden="true">VLSI</span>
                     </div>
-                    <h3>Diseño VLSI en Cadence Virtuoso</h3>
-                    <p>Diseño y simulación de circuitos integrados</p>
+                    <h3 data-skill="vlsi">Diseño VLSI en Cadence Virtuoso</h3>
+                    <p data-skill-description="vlsi">Diseño y simulación de circuitos integrados</p>
                 </div>
             </div>
         </div>
@@ -384,7 +398,7 @@
     <!-- Sección de Contacto -->
     <section id="contacto">
         <div class="contacto-container">
-            <h2>&lt;Contacto/&gt;</h2>
+            <h2 data-section-title="contacto">&lt;Contacto/&gt;</h2>
             <div class="contacto-links">
                 <a href="https://github.com/marc-zaragoza-garcia" target="_blank" rel="noopener noreferrer">GitHub</a>
                 <a href="https://linkedin.com/in/marc-zaragoza" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -398,7 +412,6 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Marc Zaragoza. Todos los derechos reservados.</p>
         <p>
             <a href="https://github.com/marc-zaragoza-garcia" target="_blank" rel="noopener noreferrer">GitHub</a> | 
             <a href="https://linkedin.com/in/marc-zaragoza-garcia" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
@@ -406,7 +419,6 @@
         </p>
     </footer>
 
-    <script src="js/theme.js"></script>
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="scripts/main.js"></script>
@@ -438,6 +450,10 @@
                     ...customOptions
                 };
 
+                if (typeof Swiper === 'undefined') {
+                    return null;
+                }
+
                 const swiper = new Swiper(container, defaultOptions);
 
                 // Pausar autoplay al hacer hover
@@ -455,13 +471,14 @@
             // Inicializar los tres carruseles
             const swipers = [];
             document.querySelectorAll('.categoria-proyectos .swiper-container').forEach((container, index) => {
-                swipers.push(initSwiper(container, {
+                const swiper = initSwiper(container, {
                     // Configuraciones específicas para cada carrusel si son necesarias
                     autoplay: {
                         delay: 5000 + (index * 1000), // Desfase en el autoplay para cada carrusel
                         disableOnInteraction: false,
                     }
-                }));
+                });
+                if (swiper) swipers.push(swiper);
             });
         });
     </script>

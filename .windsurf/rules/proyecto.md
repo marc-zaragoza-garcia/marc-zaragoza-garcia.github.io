@@ -27,7 +27,7 @@ Presentacion:
 Proyectos:
 - Seccion con 3 subsecciones
 - Tecnología contiene 3 cards con imagen_card1.png hasta imagen_card3.png
-- Frontend contiene 3 cards con imagen_card4.png hasta imagen_card6.png
+- Electronica contiene 3 cards con proyectos de circuitos, sensores y sistemas electronicos
 - Arduino contiene 3 cards con imagen_card7.png hasta imagen_card9.png
 - Cada card contiene imagen_card, titulo, breve descripcion y skills aplicadas
 Skills:

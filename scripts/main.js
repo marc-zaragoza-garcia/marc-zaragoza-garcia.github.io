@@ -19,12 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
             presentacion: {
                 subtitulo: 'Ingeniero en Telecomunicaciones',
                 descripcion: 'Soy ingeniero junior con entusiasmo por la electrónica y las redes. Me apasiona aprender, asumir nuevos retos creativos y el mundo craft.',
-                btnCV: 'Descargar CV'
+                btnCV: 'Solicitar CV'
             },
             proyectos: {
                 titulo: '<Proyectos/>',
                 tecnologia: 'Tecnología',
-                frontend: 'Frontend',
+                electronica: 'Electrónica',
                 arduino: 'Arduino',
                 proyectosTecnologia: [
                     {
@@ -40,18 +40,18 @@ document.addEventListener('DOMContentLoaded', function() {
                         descripcion: 'Desarrollo y verificación con aserciones de un FIFO mediante RAM-DP en SystemVerilog.'
                     }
                 ],
-                proyectosFrontend: [
+                proyectosElectronica: [
                     {
-                        titulo: 'Proyecto Frontend 1',
-                        descripcion: 'Descripción breve del proyecto de frontend 1.'
+                        titulo: 'Proyecto de electrónica 1',
+                        descripcion: 'Diseño y montaje de un circuito electrónico.'
                     },
                     {
-                        titulo: 'Proyecto Frontend 2',
-                        descripcion: 'Descripción breve del proyecto de frontend 2.'
+                        titulo: 'Proyecto de electrónica 2',
+                        descripcion: 'Integración de sensores y control electrónico.'
                     },
                     {
-                        titulo: 'Proyecto Frontend 3',
-                        descripcion: 'Descripción breve del proyecto de frontend 3.'
+                        titulo: 'Proyecto de electrónica 3',
+                        descripcion: 'Desarrollo de un sistema electrónico aplicado.'
                     }
                 ],
                 proyectosArduino: [
@@ -70,17 +70,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 ]
             },
             skills: {
-                titulo: '<Skills/>'
+                titulo: '<Skills/>',
+                tarjetas: {
+                    systemverilog: ['SystemVerilog', 'Diseño digital y verificación de hardware'],
+                    python: ['Python', 'Desarrollo de aplicaciones y automatización'],
+                    arduino: ['Arduino', 'Electrónica y proyectos IoT'],
+                    html5: ['HTML5', 'Estructura y semántica web'],
+                    css3: ['CSS3', 'Diseño y estilos web'],
+                    c: ['C', 'Programación de sistemas y bajo nivel'],
+                    assembly: ['Lenguaje ensamblador', 'Programación y arquitectura de computadores'],
+                    stm32: ['STM32', 'Desarrollo de sistemas embebidos'],
+                    vlsi: ['Diseño VLSI en Cadence Virtuoso', 'Diseño y simulación de circuitos integrados'],
+                    java: ['Java', 'Programación orientada a objetos'],
+                    android: ['Android Apps', 'Desarrollo de aplicaciones móviles']
+                }
             },
             estudios: {
-                titulo: '<Estudios/>'
+                titulo: '<Estudios/>',
+                tipos: ['Grado universitario', 'Summer school internacional', 'Cursos online']
             },
             contacto: {
-                titulo: '<Contacto/>'
+                titulo: '<Contacto/>',
+                enlaces: ['GitHub', 'LinkedIn', 'Correo', 'WhatsApp', 'Instagram', 'Teléfono']
             },
-            footer: {
-                derechos: '© 2025 Marc Zaragoza. Todos los derechos reservados.'
-            }
         },
         en: {
             nav: {
@@ -93,12 +105,12 @@ document.addEventListener('DOMContentLoaded', function() {
             presentacion: {
                 subtitulo: 'Telecommunications Engineer',
                 descripcion: 'I am a junior engineer with enthusiasm for electronics and networks. I am passionate about learning, taking on new creative challenges, and the craft world.',
-                btnCV: 'Download CV'
+                btnCV: 'Request CV'
             },
             proyectos: {
                 titulo: '<Projects/>',
                 tecnologia: 'Technology',
-                frontend: 'Frontend',
+                electronica: 'Electronics',
                 arduino: 'Arduino',
                 proyectosTecnologia: [
                     {
@@ -114,18 +126,18 @@ document.addEventListener('DOMContentLoaded', function() {
                         descripcion: 'Development and assertion-based verification of a FIFO in SystemVerilog.'
                     }
                 ],
-                proyectosFrontend: [
+                proyectosElectronica: [
                     {
-                        titulo: 'Frontend Project 1',
-                        descripcion: 'Brief description of frontend project 1.'
+                        titulo: 'Electronics project 1',
+                        descripcion: 'Design and assembly of an electronic circuit.'
                     },
                     {
-                        titulo: 'Frontend Project 2',
-                        descripcion: 'Brief description of frontend project 2.'
+                        titulo: 'Electronics project 2',
+                        descripcion: 'Sensor integration and electronic control.'
                     },
                     {
-                        titulo: 'Frontend Project 3',
-                        descripcion: 'Brief description of frontend project 3.'
+                        titulo: 'Electronics project 3',
+                        descripcion: 'Development of an applied electronic system.'
                     }
                 ],
                 proyectosArduino: [
@@ -144,32 +156,52 @@ document.addEventListener('DOMContentLoaded', function() {
                 ]
             },
             skills: {
-                titulo: '<Skills/>'
+                titulo: '<Skills/>',
+                tarjetas: {
+                    systemverilog: ['SystemVerilog', 'Digital design and hardware verification'],
+                    python: ['Python', 'Application development and automation'],
+                    arduino: ['Arduino', 'Electronics and IoT projects'],
+                    html5: ['HTML5', 'Web structure and semantics'],
+                    css3: ['CSS3', 'Web design and styling'],
+                    c: ['C', 'Systems and low-level programming'],
+                    assembly: ['Assembly language', 'Programming and computer architecture'],
+                    stm32: ['STM32', 'Embedded systems development'],
+                    vlsi: ['VLSI design with Cadence Virtuoso', 'Integrated circuit design and simulation'],
+                    java: ['Java', 'Object-oriented programming'],
+                    android: ['Android Apps', 'Mobile application development']
+                }
             },
             estudios: {
-                titulo: '<Studies/>'
+                titulo: '<Studies/>',
+                tipos: ['University degree', 'International summer school', 'Online courses']
             },
             contacto: {
-                titulo: '<Contact/>'
+                titulo: '<Contact/>',
+                enlaces: ['GitHub', 'LinkedIn', 'Email', 'WhatsApp', 'Instagram', 'Phone']
             },
-            footer: {
-                derechos: '© 2025 Marc Zaragoza. All rights reserved.'
-            }
         }
     };
 
     // Función para actualizar el idioma
     function updateLanguage(lang) {
         const t = translations[lang];
+
+        if (!t) return;
+
+        if (themeToggle) {
+            themeToggle.setAttribute('aria-label', lang === 'es' ? 'Cambiar tema' : 'Change theme');
+        }
+        if (langToggle) {
+            langToggle.setAttribute('aria-label', lang === 'es' ? 'Cambiar idioma' : 'Change language');
+        }
         
         // Actualizar navegación
         const navLinks = document.querySelectorAll('nav a span');
         if (navLinks.length > 0) {
-            navLinks[0].textContent = t.nav.inicio;
-            navLinks[1].textContent = t.nav.proyectos;
-            navLinks[2].textContent = t.nav.estudios;
-            navLinks[3].textContent = t.nav.skills;
-            navLinks[4].textContent = t.nav.contacto;
+            [t.nav.inicio, t.nav.proyectos, t.nav.estudios, t.nav.skills, t.nav.contacto]
+                .forEach((texto, index) => {
+                    if (navLinks[index]) navLinks[index].textContent = texto;
+                });
         }
         
         // Actualizar presentación
@@ -187,23 +219,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const estudiosTitulo = document.querySelector('#estudios h2');
         if (estudiosTitulo) estudiosTitulo.textContent = t.estudios.titulo;
+
+        document.querySelectorAll('.estudio-tipo').forEach((elemento, index) => {
+            if (t.estudios.tipos[index]) elemento.textContent = t.estudios.tipos[index];
+        });
+
+        const skillsTitulo = document.querySelector('#skills h2');
+        if (skillsTitulo) skillsTitulo.textContent = t.skills.titulo;
+
+        document.querySelectorAll('[data-skill]').forEach(elemento => {
+            const skill = t.skills.tarjetas[elemento.dataset.skill];
+            if (skill) elemento.textContent = skill[0];
+        });
+
+        document.querySelectorAll('[data-skill-description]').forEach(elemento => {
+            const skill = t.skills.tarjetas[elemento.dataset.skillDescription];
+            if (skill) elemento.textContent = skill[1];
+        });
+
+        const contactoTitulo = document.querySelector('[data-section-title="contacto"]');
+        if (contactoTitulo) contactoTitulo.textContent = t.contacto.titulo;
+
+        document.querySelectorAll('#contacto .contacto-links a').forEach((enlace, index) => {
+            if (t.contacto.enlaces[index]) enlace.textContent = t.contacto.enlaces[index];
+        });
         
         // Actualizar títulos de categorías
         const categoriasTitulos = document.querySelectorAll('.categoria-titulo');
         if (categoriasTitulos.length >= 3) {
             categoriasTitulos[0].textContent = t.proyectos.tecnologia;
-            categoriasTitulos[1].textContent = t.proyectos.frontend;
+            categoriasTitulos[1].textContent = t.proyectos.electronica;
             categoriasTitulos[2].textContent = t.proyectos.arduino;
         }
         
         // Función universal para actualizar tarjetas en cualquier dispositivo
         const actualizarTarjetas = (categoria, proyectos) => {
-            console.log(`Actualizando categoría ${categoria} con`, proyectos);
-            
             // Seleccionar todos los contenedores de categorías
             const categorias = document.querySelectorAll('.categoria-proyectos');
             if (categoria > categorias.length) {
-                console.error('Categoría no encontrada:', categoria);
                 return;
             }
             
@@ -223,7 +276,6 @@ document.addEventListener('DOMContentLoaded', function() {
             for (const selector of selectores) {
                 tarjetas = Array.from(categoriaActual.querySelectorAll(selector));
                 if (tarjetas.length > 0) {
-                    console.log(`Selector usado: ${selector}, encontradas ${tarjetas.length} tarjetas`);
                     break;
                 }
             }
@@ -237,15 +289,11 @@ document.addEventListener('DOMContentLoaded', function() {
                      el.querySelector('.card-content') || 
                      (el.tagName === 'H4' || el.tagName === 'P'))
                 );
-                console.log('Búsqueda ampliada, encontradas:', tarjetas.length);
             }
             
             // Actualizar cada tarjeta encontrada
             tarjetas.forEach((elemento, index) => {
                 // Si el elemento es un contenedor de tarjeta, buscar el contenido
-                const esContenedor = elemento.classList.contains('card') || 
-                                   elemento.querySelector('.card-content');
-                
                 const cardContent = elemento.querySelector('.card-content') || elemento;
                 const titulo = cardContent.querySelector('h4');
                 const descripcion = cardContent.querySelector('p');
@@ -256,7 +304,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const proyecto = proyectos[proyectoIndex];
                 
                 if (!proyecto) {
-                    console.warn(`No hay proyecto definido para el índice ${index}`);
                     return;
                 }
                 
@@ -264,23 +311,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (titulo) titulo.textContent = proyecto.titulo;
                 if (descripcion) descripcion.textContent = proyecto.descripcion;
                 
-                console.log(`Tarjeta ${index} actualizada:`, proyecto);
             });
-            
-            // Si no encontramos tarjetas, registrar un error detallado
-            if (tarjetas.length === 0) {
-                console.error('No se encontraron tarjetas en la categoría. HTML:', categoriaActual.innerHTML);
-            }
         };
         
         // Actualizar cada categoría de proyectos
         actualizarTarjetas(1, t.proyectos.proyectosTecnologia);
-        actualizarTarjetas(2, t.proyectos.proyectosFrontend);
+        actualizarTarjetas(2, t.proyectos.proyectosElectronica);
         actualizarTarjetas(3, t.proyectos.proyectosArduino);
         
-        // Actualizar footer
-        const footerP = document.querySelector('footer p:first-child');
-        if (footerP) footerP.textContent = t.footer.derechos;
     }
 
     // Función para actualizar el tema
@@ -350,11 +388,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Usar onclick para máxima compatibilidad
         langToggle.onclick = cambiarIdioma;
         
-        // Añadir eventos táctiles adicionales para móviles
-        langToggle.addEventListener('touchend', function(e) {
-            e.preventDefault();
-            cambiarIdioma();
-        });
     }
 
     // Animación suave al hacer scroll

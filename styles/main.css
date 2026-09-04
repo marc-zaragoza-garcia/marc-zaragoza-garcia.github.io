@@ -77,10 +77,10 @@ h2 {
 }
 
 /* Color del texto para tema oscuro */
-:root:not(.light-theme) h2,
-:root:not(.light-theme) #estudios h2,
-:root:not(.light-theme) #skills h2,
-:root:not(.light-theme) #contacto h2 {
+body:not(.light-theme) h2,
+body:not(.light-theme) #estudios h2,
+body:not(.light-theme) #skills h2,
+body:not(.light-theme) #contacto h2 {
     color: var(--color-texto-principal);
 }
 
@@ -115,6 +115,12 @@ a:hover {
 
 a:visited {
     color: var(--color-enlace-visitado);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color-acento-secundario);
+    outline-offset: 3px;
 }
 
 /* Navegación flotante en isla */
@@ -251,7 +257,7 @@ nav ul li a:focus:not(:focus-visible) {
     padding: 2rem 1rem;
 }
 
-:root:not(.light-theme) #presentacion {
+body:not(.light-theme) #presentacion {
     background-color: var(--color-fondo-principal);
 }
 
@@ -532,7 +538,7 @@ body.light-theme .presentacion-info p {
     overflow: hidden;
 }
 
-:root:not(.light-theme) #proyectos {
+body:not(.light-theme) #proyectos {
     background-color: var(--color-fondo-principal);
 }
 
@@ -924,7 +930,7 @@ body.light-theme .skill-tag {
     text-align: center;
 }
 
-:root:not(.light-theme) #estudios {
+body:not(.light-theme) #estudios {
     background-color: var(--color-fondo-principal);
 }
 
@@ -1000,7 +1006,7 @@ body.light-theme .estudio-card:hover {
     text-align: center;
 }
 
-:root:not(.light-theme) #skills {
+body:not(.light-theme) #skills {
     background-color: var(--color-fondo-principal);
 }
 
@@ -1055,6 +1061,13 @@ body.light-theme .estudio-card:hover {
     object-fit: contain;
 }
 
+.skill-icon span {
+    color: var(--color-acento-primario);
+    font-family: var(--font-principal);
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
 .skill-card h3 {
     font-family: var(--font-principal);
     color: var(--color-texto-principal);
@@ -1085,6 +1098,20 @@ body.light-theme .skill-card:hover {
 
 body.light-theme .skill-icon {
     background: rgba(59, 130, 246, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 /* Responsive */
@@ -1162,11 +1189,16 @@ body.light-theme #contacto {
 }
 
 .contacto-links a {
+    width: 140px;
+    min-height: 52px;
     background-color: var(--color-boton-principal);
     color: var(--color-texto-claro);
     padding: 1rem 2rem;
     border-radius: 8px;
     font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
 }
 
@@ -1361,10 +1393,10 @@ body.light-theme .container > section {
 }
 
 /* Establecer fondo principal para modo oscuro */
-:root:not(.light-theme) #estudios,
-:root:not(.light-theme) #skills,
-:root:not(.light-theme) #proyectos,
-:root:not(.light-theme) #presentacion {
+body:not(.light-theme) #estudios,
+body:not(.light-theme) #skills,
+body:not(.light-theme) #proyectos,
+body:not(.light-theme) #presentacion {
     background-color: var(--color-fondo-principal);
 }
 
