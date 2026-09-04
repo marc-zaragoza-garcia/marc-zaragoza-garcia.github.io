@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nav: {
                 inicio: 'Inicio',
                 proyectos: 'Proyectos',
+                estudios: 'Estudios',
                 skills: 'Skills',
                 contacto: 'Contacto'
             },
@@ -71,6 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
             skills: {
                 titulo: '<Skills/>'
             },
+            estudios: {
+                titulo: '<Estudios/>'
+            },
             contacto: {
                 titulo: '<Contacto/>'
             },
@@ -82,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nav: {
                 inicio: 'Home',
                 proyectos: 'Projects',
+                estudios: 'Studies',
                 skills: 'Skills',
                 contacto: 'Contact'
             },
@@ -141,6 +146,9 @@ document.addEventListener('DOMContentLoaded', function() {
             skills: {
                 titulo: '<Skills/>'
             },
+            estudios: {
+                titulo: '<Studies/>'
+            },
             contacto: {
                 titulo: '<Contact/>'
             },
@@ -159,8 +167,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (navLinks.length > 0) {
             navLinks[0].textContent = t.nav.inicio;
             navLinks[1].textContent = t.nav.proyectos;
-            navLinks[2].textContent = t.nav.skills;
-            navLinks[3].textContent = t.nav.contacto;
+            navLinks[2].textContent = t.nav.estudios;
+            navLinks[3].textContent = t.nav.skills;
+            navLinks[4].textContent = t.nav.contacto;
         }
         
         // Actualizar presentación
@@ -175,6 +184,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Actualizar proyectos
         const proyectosTitulo = document.querySelector('#proyectos h2');
         if (proyectosTitulo) proyectosTitulo.textContent = t.proyectos.titulo;
+
+        const estudiosTitulo = document.querySelector('#estudios h2');
+        if (estudiosTitulo) estudiosTitulo.textContent = t.estudios.titulo;
         
         // Actualizar títulos de categorías
         const categoriasTitulos = document.querySelectorAll('.categoria-titulo');

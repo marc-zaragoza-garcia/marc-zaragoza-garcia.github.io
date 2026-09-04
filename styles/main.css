@@ -69,7 +69,7 @@ h2 {
 }
 
 /* Estilo para todos los títulos de sección */
-#proyectos h2, #skills h2, #contacto h2 {
+#proyectos h2, #estudios h2, #skills h2, #contacto h2 {
     font-size: 2.5rem !important;
     margin-bottom: 2rem !important;
     font-family: var(--font-principal) !important;
@@ -78,6 +78,7 @@ h2 {
 
 /* Color del texto para tema oscuro */
 :root:not(.light-theme) h2,
+:root:not(.light-theme) #estudios h2,
 :root:not(.light-theme) #skills h2,
 :root:not(.light-theme) #contacto h2 {
     color: var(--color-texto-principal);
@@ -85,6 +86,7 @@ h2 {
 
 /* Color del texto para tema claro */
 .light-theme h2,
+.light-theme #estudios h2,
 .light-theme #skills h2,
 .light-theme #contacto h2 {
     color: #0F172A !important;
@@ -915,6 +917,82 @@ body.light-theme .skill-tag {
 }
 
 /* ======================
+   SECCIÓN DE ESTUDIOS
+   ====================== */
+#estudios {
+    padding: 2rem 1rem 3rem;
+    text-align: center;
+}
+
+:root:not(.light-theme) #estudios {
+    background-color: var(--color-fondo-principal);
+}
+
+.estudios-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.estudios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem auto 0;
+}
+
+.estudio-card {
+    min-height: 220px;
+    padding: 2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.estudio-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-acento-primario);
+    background: rgba(59, 130, 246, 0.05);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.estudio-tipo {
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--color-acento-secundario);
+    font-family: var(--font-principal);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.estudio-card h3 {
+    margin-bottom: 1rem;
+    color: var(--color-texto-principal);
+    font-size: 1.25rem;
+    line-height: 1.35;
+}
+
+.estudio-institucion {
+    margin: 0;
+    color: var(--color-texto-secundario);
+    font-size: 0.95rem;
+}
+
+body.light-theme .estudio-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+body.light-theme .estudio-card:hover {
+    background: white;
+    border-color: var(--color-acento-primario);
+}
+
+/* ======================
    SECCIÓN DE SKILLS
    ====================== */
 #skills {
@@ -1237,6 +1315,7 @@ footer a:hover {
     /* Asegurar que todos los títulos h2 tengan el mismo tamaño en móviles */
     h2,
     #proyectos h2,
+    #estudios h2,
     #skills h2,
     #contacto h2 {
         font-size: 1.8rem;
@@ -1272,6 +1351,7 @@ body.light-theme .presentacion-info h2 {
     color: #3B82F6;
 }
 
+body.light-theme #estudios,
 body.light-theme #skills,
 body.light-theme #proyectos,
 body.light-theme #presentacion,
@@ -1281,6 +1361,7 @@ body.light-theme .container > section {
 }
 
 /* Establecer fondo principal para modo oscuro */
+:root:not(.light-theme) #estudios,
 :root:not(.light-theme) #skills,
 :root:not(.light-theme) #proyectos,
 :root:not(.light-theme) #presentacion {
